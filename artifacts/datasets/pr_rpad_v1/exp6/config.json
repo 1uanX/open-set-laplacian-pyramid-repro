@@ -1,0 +1,343 @@
+{
+  "repro_config": {
+    "mixed_sequences": 200,
+    "sequence_length": 400,
+    "specific_sequences": 100,
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "lenwindow": 1,
+    "pdg_size": 65,
+    "pulse_loss_range": [
+      0.0,
+      0.5
+    ],
+    "noise_ratio_range": [
+      0.0,
+      0.5
+    ],
+    "specific_noise_grid": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "seed": 20260417
+  },
+  "experiment": {
+    "experiment_id": 6,
+    "name": "exp6_open_jittered",
+    "open_set": true,
+    "global_ranges": {
+      "rf": [
+        1205,
+        12300
+      ],
+      "pw": [
+        1.1,
+        29.1
+      ],
+      "pri": [
+        18,
+        1250
+      ],
+      "pa": [
+        -54,
+        -32
+      ],
+      "doa": [
+        65,
+        88
+      ]
+    },
+    "emitters": [
+      {
+        "tag": 1,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 9650,
+              "high": 9950,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 7.2,
+              "high": 8.6,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 61,
+              "high": 92,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -45,
+              "high": -38,
+              "mode": "M"
+            },
+            "doa_low": 79,
+            "doa_high": 84
+          }
+        ]
+      },
+      {
+        "tag": 2,
+        "known": false,
+        "modes": [
+          {
+            "rf": {
+              "low": 9820,
+              "high": 10200,
+              "mode": "A"
+            },
+            "pw": {
+              "low": 1.2,
+              "high": 3.8,
+              "mode": "S"
+            },
+            "pri": {
+              "low": 28,
+              "high": 32,
+              "mode": "DS"
+            },
+            "pa": {
+              "low": -42,
+              "high": -35,
+              "mode": "P1"
+            },
+            "doa_low": 76,
+            "doa_high": 81
+          },
+          {
+            "rf": {
+              "low": 10800,
+              "high": 11200,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 2.2,
+              "high": 6.8,
+              "mode": "A"
+            },
+            "pri": {
+              "low": 18,
+              "high": 46,
+              "mode": "J"
+            },
+            "pa": {
+              "low": -45,
+              "high": -38,
+              "mode": "P1"
+            },
+            "doa_low": 76,
+            "doa_high": 81
+          }
+        ]
+      },
+      {
+        "tag": 3,
+        "known": false,
+        "modes": [
+          {
+            "rf": {
+              "low": 9650,
+              "high": 9950,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 7.2,
+              "high": 8.6,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 61,
+              "high": 92,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -40,
+              "high": -33,
+              "mode": "M"
+            },
+            "doa_low": 75,
+            "doa_high": 80
+          }
+        ]
+      },
+      {
+        "tag": 4,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 1205,
+              "high": 1450,
+              "mode": "S"
+            },
+            "pw": {
+              "low": 4.2,
+              "high": 5.7,
+              "mode": "A"
+            },
+            "pri": {
+              "low": 59.1,
+              "high": 59.1,
+              "mode": "F"
+            },
+            "pa": {
+              "low": -54,
+              "high": -49,
+              "mode": "P2"
+            },
+            "doa_low": 80,
+            "doa_high": 81
+          }
+        ]
+      },
+      {
+        "tag": 5,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 8200,
+              "high": 9100,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 1.4,
+              "high": 4.5,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 18.7,
+              "high": 28.7,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -51,
+              "high": -43,
+              "mode": "P1"
+            },
+            "doa_low": 82,
+            "doa_high": 88
+          },
+          {
+            "rf": {
+              "low": 9120,
+              "high": 10200,
+              "mode": "S"
+            },
+            "pw": {
+              "low": 3.2,
+              "high": 5.2,
+              "mode": "A"
+            },
+            "pri": {
+              "low": 29,
+              "high": 68.7,
+              "mode": "DS"
+            },
+            "pa": {
+              "low": -44,
+              "high": -37,
+              "mode": "P1"
+            },
+            "doa_low": 82,
+            "doa_high": 88
+          },
+          {
+            "rf": {
+              "low": 11200,
+              "high": 12300,
+              "mode": "A"
+            },
+            "pw": {
+              "low": 4.1,
+              "high": 6.4,
+              "mode": "S"
+            },
+            "pri": {
+              "low": 21.4,
+              "high": 34.7,
+              "mode": "J"
+            },
+            "pa": {
+              "low": -48,
+              "high": -45,
+              "mode": "P1"
+            },
+            "doa_low": 82,
+            "doa_high": 88
+          }
+        ]
+      },
+      {
+        "tag": 6,
+        "known": false,
+        "modes": [
+          {
+            "rf": {
+              "low": 5400,
+              "high": 5870,
+              "mode": "S"
+            },
+            "pw": {
+              "low": 1.1,
+              "high": 11.2,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 990,
+              "high": 1007,
+              "mode": "F"
+            },
+            "pa": {
+              "low": -41,
+              "high": -34,
+              "mode": "P2"
+            },
+            "doa_low": 65,
+            "doa_high": 69
+          }
+        ]
+      },
+      {
+        "tag": 7,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 3100,
+              "high": 3490,
+              "mode": "A"
+            },
+            "pw": {
+              "low": 22.4,
+              "high": 29.1,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 857,
+              "high": 1250,
+              "mode": "J"
+            },
+            "pa": {
+              "low": -39,
+              "high": -32,
+              "mode": "P1"
+            },
+            "doa_low": 85,
+            "doa_high": 86
+          }
+        ]
+      }
+    ]
+  },
+  "paper_targets": {
+    "ACC_known": 99.613,
+    "OSCR": 72.14
+  }
+}

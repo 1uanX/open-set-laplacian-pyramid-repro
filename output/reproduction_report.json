@@ -1,0 +1,102 @@
+{
+  "workspace": "D:\\keyan\\research-units-pipeline-skills-main\\workspaces\\open-set-laplacian-pyramid-repro",
+  "dataset_root": "D:\\keyan\\research-units-pipeline-skills-main\\workspaces\\open-set-laplacian-pyramid-repro\\artifacts\\datasets\\pr_rpad_v1",
+  "reports": [
+    {
+      "experiment": "exp1",
+      "open_set": false,
+      "iterations": 40,
+      "device": "cuda",
+      "final_metrics": {
+        "accuracy": 99.98658078368223,
+        "mean_recall": 99.98658078368223,
+        "mean_precision": 99.98658798283262,
+        "mean_iou": 99.97316876651485
+      },
+      "paper_target": {
+        "ACC_closed_set": 100.0,
+        "MR": 100.0,
+        "MP": 100.0,
+        "MIOU": 100.0
+      }
+    },
+    {
+      "experiment": "exp2",
+      "open_set": false,
+      "iterations": 40,
+      "device": "cuda",
+      "final_metrics": {
+        "accuracy": 98.84615384615385,
+        "mean_recall": 98.84615384615385,
+        "mean_precision": 98.84718801017452,
+        "mean_iou": 97.74025364335023
+      },
+      "paper_target": {
+        "ACC_closed_set": 99.382,
+        "MR": 99.02,
+        "MP": 99.043,
+        "MIOU": 98.098
+      }
+    },
+    {
+      "experiment": "exp3",
+      "open_set": false,
+      "iterations": 80,
+      "device": "cuda",
+      "final_metrics": {
+        "accuracy": 98.40251407620794,
+        "mean_recall": 98.40251407620794,
+        "mean_precision": 98.4541423499454,
+        "mean_iou": 96.94814840949184
+      },
+      "paper_target": {
+        "ACC_closed_set": 98.184,
+        "MR": 97.763,
+        "MP": 98.272,
+        "MIOU": 96.226
+      }
+    },
+    {
+      "experiment": "exp4",
+      "open_set": true,
+      "iterations": 40,
+      "device": "cuda",
+      "final_metrics": {
+        "ACC_known": 99.91144172865745,
+        "OSCR": 99.83777850721819
+      },
+      "paper_target": {
+        "ACC_known": 99.983,
+        "OSCR": 99.966
+      }
+    },
+    {
+      "experiment": "exp5",
+      "open_set": true,
+      "iterations": 40,
+      "device": "cuda",
+      "final_metrics": {
+        "ACC_known": 99.95622674545852,
+        "OSCR": 85.29473305176873
+      },
+      "paper_target": {
+        "ACC_known": 100.0,
+        "OSCR": 82.391
+      }
+    },
+    {
+      "experiment": "exp6",
+      "open_set": true,
+      "iterations": 40,
+      "device": "cuda",
+      "final_metrics": {
+        "ACC_known": 99.65533088235294,
+        "OSCR": 91.04895119278349
+      },
+      "paper_target": {
+        "ACC_known": 99.613,
+        "OSCR": 72.14
+      }
+    }
+  ]
+}

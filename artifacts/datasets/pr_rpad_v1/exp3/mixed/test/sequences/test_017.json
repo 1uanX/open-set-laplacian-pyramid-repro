@@ -1,0 +1,24 @@
+{
+  "pulse_loss_rate": 0.06699239957250697,
+  "noise_ratio": 0.34602933452884405,
+  "known_tags": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "unknown_tags": [],
+  "class_tags": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "sequence_length": 400
+}

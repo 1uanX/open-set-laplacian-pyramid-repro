@@ -1,0 +1,237 @@
+{
+  "repro_config": {
+    "mixed_sequences": 200,
+    "sequence_length": 400,
+    "specific_sequences": 100,
+    "train_ratio": 0.8,
+    "val_ratio": 0.1,
+    "test_ratio": 0.1,
+    "lenwindow": 1,
+    "pdg_size": 65,
+    "pulse_loss_range": [
+      0.0,
+      0.5
+    ],
+    "noise_ratio_range": [
+      0.0,
+      0.5
+    ],
+    "specific_noise_grid": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "seed": 20260417
+  },
+  "experiment": {
+    "experiment_id": 2,
+    "name": "exp2_closed_multifunction",
+    "open_set": false,
+    "global_ranges": {
+      "rf": [
+        1205,
+        12300
+      ],
+      "pw": [
+        1.2,
+        8.6
+      ],
+      "pri": [
+        18.7,
+        92
+      ],
+      "pa": [
+        -54,
+        -33
+      ],
+      "doa": [
+        75,
+        88
+      ]
+    },
+    "emitters": [
+      {
+        "tag": 1,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 9650,
+              "high": 9950,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 7.2,
+              "high": 8.6,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 61,
+              "high": 92,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -45,
+              "high": -38,
+              "mode": "M"
+            },
+            "doa_low": 79,
+            "doa_high": 84
+          }
+        ]
+      },
+      {
+        "tag": 2,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 9820,
+              "high": 10200,
+              "mode": "A"
+            },
+            "pw": {
+              "low": 1.2,
+              "high": 3.8,
+              "mode": "S"
+            },
+            "pri": {
+              "low": 28,
+              "high": 32,
+              "mode": "DS"
+            },
+            "pa": {
+              "low": -42,
+              "high": -35,
+              "mode": "P1"
+            },
+            "doa_low": 76,
+            "doa_high": 81
+          }
+        ]
+      },
+      {
+        "tag": 3,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 9650,
+              "high": 9950,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 7.2,
+              "high": 8.6,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 61,
+              "high": 92,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -40,
+              "high": -33,
+              "mode": "M"
+            },
+            "doa_low": 75,
+            "doa_high": 80
+          }
+        ]
+      },
+      {
+        "tag": 4,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 1205,
+              "high": 1450,
+              "mode": "S"
+            },
+            "pw": {
+              "low": 4.2,
+              "high": 5.7,
+              "mode": "A"
+            },
+            "pri": {
+              "low": 59.1,
+              "high": 59.1,
+              "mode": "F"
+            },
+            "pa": {
+              "low": -54,
+              "high": -49,
+              "mode": "P2"
+            },
+            "doa_low": 80,
+            "doa_high": 81
+          }
+        ]
+      },
+      {
+        "tag": 5,
+        "known": true,
+        "modes": [
+          {
+            "rf": {
+              "low": 8200,
+              "high": 10100,
+              "mode": "F"
+            },
+            "pw": {
+              "low": 1.4,
+              "high": 4.5,
+              "mode": "F"
+            },
+            "pri": {
+              "low": 18.7,
+              "high": 28.7,
+              "mode": "S"
+            },
+            "pa": {
+              "low": -51,
+              "high": -43,
+              "mode": "P1"
+            },
+            "doa_low": 82,
+            "doa_high": 88
+          },
+          {
+            "rf": {
+              "low": 10200,
+              "high": 12300,
+              "mode": "S"
+            },
+            "pw": {
+              "low": 3.2,
+              "high": 6.2,
+              "mode": "A"
+            },
+            "pri": {
+              "low": 29,
+              "high": 68.7,
+              "mode": "DS"
+            },
+            "pa": {
+              "low": -44,
+              "high": -37,
+              "mode": "P1"
+            },
+            "doa_low": 82,
+            "doa_high": 88
+          }
+        ]
+      }
+    ]
+  },
+  "paper_targets": {
+    "ACC_closed_set": 99.382,
+    "MR": 99.02,
+    "MP": 99.043,
+    "MIOU": 98.098
+  }
+}
