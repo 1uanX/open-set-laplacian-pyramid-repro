@@ -1,0 +1,14 @@
+{
+  "enable_bcrps": true,
+  "lambda": 0.001,
+  "margin": 1.0,
+  "use_normalized_distance": true,
+  "use_warmup": true,
+  "warmup_fraction": 0.2,
+  "seed": 20260417,
+  "ablation_mode": "margin_sweep",
+  "logging_diagnostics": true,
+  "diagnostic_output_dir": "output\\bcrps_contract_v1\\{run_id}\\diagnostics",
+  "run_id": "bcrps_v1_margin_1.0_seed{seed}_{timestamp}",
+  "frozen_pair_manifest": "output\\bcrps_contract_v1\\baseline_frozen_pair_manifest.json"
+}

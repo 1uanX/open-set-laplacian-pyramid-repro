@@ -177,6 +177,13 @@ class PRRPADModel(nn.Module):
     def combine_probs(self, outputs: list[dict[str, torch.Tensor]]) -> torch.Tensor:
         return torch.stack([item["probs"] for item in outputs], dim=0).mean(dim=0)
 
+    def reciprocal_point_tensors(self) -> list[torch.Tensor]:
+        return [
+            self.head1.reciprocal_points,
+            self.head2.reciprocal_points,
+            self.head3.reciprocal_points,
+        ]
+
     def confidence(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         outputs = self.forward_unknown(x)
         probs = outputs["probs"]

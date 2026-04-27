@@ -1,0 +1,20 @@
+{
+  "contract_version": "round4_v1",
+  "enabled": true,
+  "method_variant": "full_finetune",
+  "seed": 20260414,
+  "fixed_seeds": [20260414, 20260417, 20260418],
+  "run_id": "round4_v1_full_finetune_seed{seed}_{timestamp}",
+  "output_dir": "output\\round4_contract_v1\\{run_id}",
+  "checkpoint_path": "output\\round4_contract_v1\\p003_checkpoints\\{seed}\\matched_p003_checkpoint.pt",
+  "adapter_rank": 0,
+  "adapter_alpha": 16.0,
+  "adapter_dropout": 0.0,
+  "target_module_roots": ["backbone", "scale1", "scale2", "scale3"],
+  "preservation_lock": false,
+  "merge_adapters_for_inference": false,
+  "resource_logging": true,
+  "latency_warmup_steps": 1,
+  "latency_repeats": 3,
+  "expected_experiments": ["exp4", "exp5", "exp6"]
+}
