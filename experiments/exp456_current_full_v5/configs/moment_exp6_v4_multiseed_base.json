@@ -1,0 +1,27 @@
+{
+  "dataset_root": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s128_seed20260428",
+  "experiments": ["exp6"],
+  "models": [
+    "moment_lora_rank8",
+    "moment_lora_qkvo_rank8",
+    "moment_lora_qkvo_rank8_rslora"
+  ],
+  "output_dir": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\results\\moment_exp6_v4_multiseed",
+  "cache_dir": "D:\\keyan\\ai_research_workflow_base\\14_rejection_safe_lora_adaptation\\hf_cache",
+  "seed": 20260414,
+  "window_length": 32,
+  "patch_length": 8,
+  "patch_stride": 8,
+  "iterations": 120,
+  "eval_every": 120,
+  "batch_size": 64,
+  "samples_per_class": 0,
+  "train_limit": null,
+  "eval_limit": null,
+  "prototype_limit": 4096,
+  "lr_head": 0.001,
+  "lr_lora": 0.0005,
+  "weight_decay": 0.0001,
+  "known_accept_rate": 0.95,
+  "device": "cuda"
+}

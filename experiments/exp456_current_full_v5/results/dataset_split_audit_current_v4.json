@@ -1,0 +1,521 @@
+{
+  "source_paper_aligned_v6": {
+    "exp4": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp4\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp4\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp4\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp4\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 8000
+      },
+      "known_rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 1756
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 6244
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "out/test": [
+          -1,
+          0
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": false,
+      "any_overlap": false
+    },
+    "exp5": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp5\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp5\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp5\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp5\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 8000
+      },
+      "known_rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 879
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7121
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "out/test": [
+          -1,
+          0
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": false,
+      "any_overlap": false
+    },
+    "exp6": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp6\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp6\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp6\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6\\exp6\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 8000
+      },
+      "known_rows": {
+        "train": 64000,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 498
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7502
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "out/test": [
+          -1,
+          0
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": false,
+      "any_overlap": false
+    }
+  },
+  "fewshot_s128_exp456": {
+    "exp4": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp4\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp4\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp4\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp4\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 512,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 6244
+      },
+      "known_rows": {
+        "train": 512,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 0
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 6244
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "out/test": [
+          -1
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": true,
+      "any_overlap": false
+    },
+    "exp5": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp5\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp5\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp5\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp5\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 512,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 7121
+      },
+      "known_rows": {
+        "train": 512,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 0
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7121
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "out/test": [
+          -1
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": true,
+      "any_overlap": false
+    },
+    "exp6": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp6\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp6\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp6\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428\\exp6\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 640,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 7502
+      },
+      "known_rows": {
+        "train": 640,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 0
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7502
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "out/test": [
+          -1
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": true,
+      "any_overlap": false
+    }
+  },
+  "v4_exp6_s128": {
+    "exp6": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s128_seed20260428\\exp6\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s128_seed20260428\\exp6\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s128_seed20260428\\exp6\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s128_seed20260428\\exp6\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 640,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 7502
+      },
+      "known_rows": {
+        "train": 640,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 0
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7502
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "out/test": [
+          -1
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": true,
+      "any_overlap": false
+    }
+  },
+  "v4_exp6_s256": {
+    "exp6": {
+      "paths": {
+        "train": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s256_seed20260428\\exp6\\mixed\\train\\pulse_index.csv",
+        "val": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s256_seed20260428\\exp6\\mixed\\val\\pulse_index.csv",
+        "test": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s256_seed20260428\\exp6\\mixed\\test\\pulse_index.csv",
+        "out/test": "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\datasets\\paper_aligned_v6_exp6_s256_seed20260428\\exp6\\out\\test\\pulse_index.csv"
+      },
+      "rows": {
+        "train": 1280,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 7502
+      },
+      "known_rows": {
+        "train": 1280,
+        "val": 8000,
+        "test": 8000,
+        "out/test": 0
+      },
+      "unknown_rows": {
+        "train": 0,
+        "val": 0,
+        "test": 0,
+        "out/test": 7502
+      },
+      "mapped_labels": {
+        "train": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "val": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "test": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "out/test": [
+          -1
+        ]
+      },
+      "overlaps": {
+        "train__val": 0,
+        "train__test": 0,
+        "train__out/test": 0,
+        "val__test": 0,
+        "val__out/test": 0,
+        "test__out/test": 0
+      },
+      "train_has_unknown": false,
+      "val_has_unknown": false,
+      "test_has_unknown": false,
+      "out_all_unknown": true,
+      "any_overlap": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+﻿[
+    {
+        "method":  "prrpad",
+        "seed":  20260414,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\prrpad_exp456_current_full_v5_s128_seed20260414_it120.log",
+        "output":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\results\\prrpad_exp456_current_full_v5\\prrpad_exp456_current_full_v5_s128_seed20260414_it120"
+    },
+    {
+        "method":  "prrpad",
+        "seed":  20260417,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\prrpad_exp456_current_full_v5_s128_seed20260417_it120.log",
+        "output":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\results\\prrpad_exp456_current_full_v5\\prrpad_exp456_current_full_v5_s128_seed20260417_it120"
+    },
+    {
+        "method":  "prrpad",
+        "seed":  20260418,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\prrpad_exp456_current_full_v5_s128_seed20260418_it120.log",
+        "output":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\results\\prrpad_exp456_current_full_v5\\prrpad_exp456_current_full_v5_s128_seed20260418_it120"
+    }
+]

@@ -1,0 +1,20 @@
+﻿[
+    {
+        "method":  "moment_qkvo_rslora",
+        "seed":  20260414,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp456_current_full_v5_s128_seed20260414_it120.log"
+    },
+    {
+        "method":  "moment_qkvo_rslora",
+        "seed":  20260417,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp456_current_full_v5_s128_seed20260417_it120.log"
+    },
+    {
+        "method":  "moment_qkvo_rslora",
+        "seed":  20260418,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp456_current_full_v5_s128_seed20260418_it120.log"
+    }
+]

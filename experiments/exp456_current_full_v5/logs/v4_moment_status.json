@@ -1,0 +1,44 @@
+﻿[
+    {
+        "method":  "moment",
+        "samples":  128,
+        "seed":  20260414,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s128_seed20260414_it120.log"
+    },
+    {
+        "method":  "moment",
+        "samples":  128,
+        "seed":  20260417,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s128_seed20260417_it120.log"
+    },
+    {
+        "method":  "moment",
+        "samples":  128,
+        "seed":  20260418,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s128_seed20260418_it120.log"
+    },
+    {
+        "method":  "moment",
+        "samples":  256,
+        "seed":  20260414,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s256_seed20260414_it120.log"
+    },
+    {
+        "method":  "moment",
+        "samples":  256,
+        "seed":  20260417,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s256_seed20260417_it120.log"
+    },
+    {
+        "method":  "moment",
+        "samples":  256,
+        "seed":  20260418,
+        "exit_code":  0,
+        "log":  "D:\\keyan\\ai_research_workflow_base\\16_exp6_lora_ladder_v2_v3\\logs\\moment_exp6_v4_s256_seed20260418_it120.log"
+    }
+]
