@@ -1,0 +1,11 @@
+iteration,train_loss,ACC_known,OSCR,validation_selection
+12,0.6157439351081848,96.7375,,known_val_only_no_unknown_out
+24,-0.05020859092473984,92.425,,known_val_only_no_unknown_out
+36,-0.15071034679810205,90.1875,,known_val_only_no_unknown_out
+48,-0.18546901270747185,95.6,,known_val_only_no_unknown_out
+60,-0.20725359519322714,94.525,,known_val_only_no_unknown_out
+72,-0.2270387771228949,94.8,,known_val_only_no_unknown_out
+84,-0.22614696621894836,96.89999999999999,,known_val_only_no_unknown_out
+96,-0.23452039683858553,95.525,,known_val_only_no_unknown_out
+108,-0.22650712355971336,98.3875,,known_val_only_no_unknown_out
+120,-0.2294206085304419,97.575,,known_val_only_no_unknown_out

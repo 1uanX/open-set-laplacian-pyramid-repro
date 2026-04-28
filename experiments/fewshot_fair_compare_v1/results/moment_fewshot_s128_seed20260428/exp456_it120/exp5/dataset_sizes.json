@@ -1,0 +1,8 @@
+{
+  "num_classes": 4,
+  "train": 512,
+  "prototype": 512,
+  "val": 8000,
+  "test": 8000,
+  "out": 7121
+}

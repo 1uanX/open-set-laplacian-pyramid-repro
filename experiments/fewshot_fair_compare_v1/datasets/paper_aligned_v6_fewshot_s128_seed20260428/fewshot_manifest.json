@@ -1,0 +1,55 @@
+{
+  "source_root": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6",
+  "output_root": "D:\\keyan\\ai_research_workflow_base\\15_fewshot_fair_compare\\datasets\\paper_aligned_v6_fewshot_s128_seed20260428",
+  "samples_per_class": 128,
+  "seed": 20260428,
+  "experiments": {
+    "exp4": {
+      "num_classes": 4,
+      "train_rows": 512,
+      "val_rows": 8000,
+      "test_rows": 8000,
+      "out_unknown_rows": 6244,
+      "train_label_counts": {
+        "0": 128,
+        "1": 128,
+        "2": 128,
+        "3": 128
+      }
+    },
+    "exp5": {
+      "num_classes": 4,
+      "train_rows": 512,
+      "val_rows": 8000,
+      "test_rows": 8000,
+      "out_unknown_rows": 7121,
+      "train_label_counts": {
+        "0": 128,
+        "1": 128,
+        "2": 128,
+        "3": 128
+      }
+    },
+    "exp6": {
+      "num_classes": 5,
+      "train_rows": 640,
+      "val_rows": 8000,
+      "test_rows": 8000,
+      "out_unknown_rows": 7502,
+      "train_label_counts": {
+        "0": 128,
+        "1": 128,
+        "2": 128,
+        "3": 128,
+        "4": 128
+      }
+    }
+  },
+  "protocol": {
+    "train": "fixed known-only few-shot pulse_index sampled per mapped_label",
+    "val": "full known validation pulse_index copied from source",
+    "test": "full known test pulse_index copied from source",
+    "out": "full true unknown out/test pulse_index copied from source",
+    "sequence_files": "not copied; sequence_path remains absolute source path"
+  }
+}
