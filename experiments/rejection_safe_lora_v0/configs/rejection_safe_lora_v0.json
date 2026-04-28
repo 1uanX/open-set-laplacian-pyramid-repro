@@ -1,0 +1,23 @@
+{
+  "dataset_root": "D:\\keyan\\ai_research_workflow_base\\13_paper_aligned_repro\\datasets\\pr_rpad_paper_aligned_v6",
+  "experiments": ["exp4", "exp5", "exp6"],
+  "models": ["moment_head", "moment_lora_rank8"],
+  "output_dir": "D:\\keyan\\ai_research_workflow_base\\14_rejection_safe_lora_adaptation\\results\\rejection_safe_lora_v0",
+  "cache_dir": "D:\\keyan\\ai_research_workflow_base\\14_rejection_safe_lora_adaptation\\hf_cache",
+  "seed": 20260414,
+  "window_length": 32,
+  "patch_length": 8,
+  "patch_stride": 8,
+  "iterations": 60,
+  "eval_every": 60,
+  "batch_size": 64,
+  "samples_per_class": 1024,
+  "train_limit": null,
+  "eval_limit": null,
+  "prototype_limit": 4096,
+  "lr_head": 0.001,
+  "lr_lora": 0.0005,
+  "weight_decay": 0.0001,
+  "known_accept_rate": 0.95,
+  "device": "cuda"
+}

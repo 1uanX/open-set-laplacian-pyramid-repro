@@ -536,10 +536,20 @@ def otsu_threshold(values: np.ndarray) -> float:
 
 
 class PulseGraphConverter:
-    def __init__(self, *, lenwindow: int = 1, output_size: int = 65, feature_ranges: dict[str, tuple[float, float]] | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        lenwindow: int = 1,
+        output_size: int = 65,
+        feature_ranges: dict[str, tuple[float, float]] | None = None,
+        input_mode: str = "vector",
+    ) -> None:
+        if input_mode not in {"vector", "pdg_image"}:
+            raise ValueError(f"Unsupported input_mode: {input_mode}")
         self.lenwindow = lenwindow
         self.output_size = output_size
         self.feature_ranges = feature_ranges or {}
+        self.input_mode = input_mode
 
     def _normalize(self, sequence: pd.DataFrame) -> pd.DataFrame:
         work = sequence.loc[:, ["dtoa", "rf", "pw", "pa", "doa"]].copy()
@@ -586,6 +596,8 @@ class PulseGraphConverter:
         block = self._window_rows(normalized, center_index)
         vector = block.reshape(-1).astype(np.float32)
         matrix = self._pairwise_matrix(vector).astype(np.float32).reshape(-1)
+        if self.input_mode == "pdg_image":
+            return self._enhance(matrix.reshape(len(vector), len(vector))).reshape(-1).astype(np.float32)
         return np.concatenate([vector, matrix], axis=0).astype(np.float32)
 
     def vectorize_all(self, sequence: pd.DataFrame) -> np.ndarray:
@@ -595,6 +607,9 @@ class PulseGraphConverter:
             block = self._window_rows(normalized, center_index)
             vector = block.reshape(-1).astype(np.float32)
             matrix = self._pairwise_matrix(vector).astype(np.float32).reshape(-1)
+            if self.input_mode == "pdg_image":
+                vectors.append(self._enhance(matrix.reshape(len(vector), len(vector))).reshape(-1))
+                continue
             vectors.append(np.concatenate([vector, matrix], axis=0))
         return np.asarray(vectors, dtype=np.float32)
 

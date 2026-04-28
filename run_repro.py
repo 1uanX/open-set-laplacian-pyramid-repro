@@ -20,7 +20,7 @@ from torch import nn
 from torch.utils.data import DataLoader, Dataset
 
 from repro_dataset import EXPERIMENTS, PAPER_TARGETS, PulseGraphConverter, ReproConfig, build_all_datasets, load_sequence
-from repro_model import ModelConfig, PRRPADModel
+from repro_model import ModelConfig, PaperPRRPADModel, PRRPADModel
 from bcrps_utils import (
     BCRPSSettings,
     collect_reciprocal_point_tensors,
@@ -45,6 +45,7 @@ EXPERIMENT_SEEDS = {
     "exp6": 20260414,
 }
 OPEN_SET_EXPERIMENT_KEYS = {f"exp{experiment.experiment_id}" for experiment in EXPERIMENTS if experiment.open_set}
+MODEL_ARCHITECTURES = {"mlp", "paper_prrpad"}
 
 
 class PulseIndexDataset(Dataset):
@@ -134,14 +135,29 @@ def build_loaders(dataset_root: Path, batch_size: int, converter: PulseGraphConv
     return loaders
 
 
-def build_converter(dataset_root: Path) -> PulseGraphConverter:
+def build_converter(dataset_root: Path, *, input_mode: str = "vector") -> PulseGraphConverter:
     config_path = dataset_root / "config.json"
     if config_path.exists():
         config_payload = json.loads(config_path.read_text(encoding="utf-8"))
         feature_ranges = config_payload["experiment"].get("global_ranges", {})
     else:
         feature_ranges = _round5_feature_ranges(dataset_root)
-    return PulseGraphConverter(lenwindow=1, output_size=65, feature_ranges=feature_ranges)
+    return PulseGraphConverter(lenwindow=1, output_size=65, feature_ranges=feature_ranges, input_mode=input_mode)
+
+
+def build_model(*, model_arch: str, num_classes: int, input_dim: int) -> PRRPADModel | PaperPRRPADModel:
+    if model_arch not in MODEL_ARCHITECTURES:
+        raise ValueError(f"Unsupported model architecture: {model_arch}")
+    if model_arch == "paper_prrpad":
+        config = ModelConfig(
+            num_classes=num_classes,
+            input_dim=input_dim,
+            alpha1=1.0 / 3.0,
+            alpha2=1.0 / 3.0,
+            alpha3=1.0 / 3.0,
+        )
+        return PaperPRRPADModel(config)
+    return PRRPADModel(ModelConfig(num_classes=num_classes, input_dim=input_dim))
 
 
 def _round5_feature_ranges(dataset_root: Path) -> dict[str, tuple[float, float]]:
@@ -992,6 +1008,7 @@ def train_open_set(
     diagnostics_dir: Path | None,
     run_id: str,
     experiment_key: str,
+    strict_validation_selection: bool = False,
 ) -> tuple[list[dict], dict[str, torch.Tensor]]:
     classifier_params = (
         _trainable_parameters(model.backbone)
@@ -1063,8 +1080,17 @@ def train_open_set(
         classifier_losses.append(float(c_loss.item()))
 
         if iteration % eval_every == 0 or iteration == iterations:
-            metrics = evaluate_open_set(model, loaders["val"], loaders["out"], device)
-            score = metrics["ACC_known"] + metrics["OSCR"]
+            if strict_validation_selection:
+                known_val_metrics = evaluate_closed_set(model, loaders["val"], device, model.config.num_classes)
+                metrics = {
+                    "ACC_known": known_val_metrics["accuracy"],
+                    "OSCR": float("nan"),
+                    "validation_selection": "known_val_only_no_unknown_out",
+                }
+                score = metrics["ACC_known"]
+            else:
+                metrics = evaluate_open_set(model, loaders["val"], loaders["out"], device)
+                score = metrics["ACC_known"] + metrics["OSCR"]
             if score >= best_score:
                 best_score = score
                 best_state = deepcopy(model.state_dict())
@@ -1178,6 +1204,9 @@ def run_experiment(
     seed_label_value: str,
     timestamp: str,
     dataset_family_root: Path,
+    input_mode: str = "vector",
+    strict_validation_selection: bool = False,
+    model_arch: str = "mlp",
 ) -> dict:
     seed = seed_override if seed_override is not None else round4_settings.seed
     if seed is None:
@@ -1186,10 +1215,10 @@ def run_experiment(
         seed = EXPERIMENT_SEEDS.get(experiment_key, 20260417)
     set_seed(seed)
     dataset_root = dataset_family_root / experiment_key
-    converter = build_converter(dataset_root)
+    converter = build_converter(dataset_root, input_mode=input_mode)
     loaders = build_loaders(dataset_root, batch_size, converter)
     sample_dim = int(loaders["train"].dataset[0][0].numel())
-    model = PRRPADModel(ModelConfig(num_classes=_num_classes(dataset_root), input_dim=sample_dim))
+    model = build_model(model_arch=model_arch, num_classes=_num_classes(dataset_root), input_dim=sample_dim)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if device.type == "cuda":
         torch.cuda.reset_peak_memory_stats(device)
@@ -1243,6 +1272,7 @@ def run_experiment(
             diagnostics_dir=diagnostics_dir,
             run_id=run_id,
             experiment_key=experiment_key,
+            strict_validation_selection=strict_validation_selection,
         )
         model.load_state_dict(best_state)
         training_time_seconds = time.perf_counter() - train_started
@@ -1347,6 +1377,15 @@ def run_experiment(
         "round4": round4_payload,
         "round4_merged_modules_for_inference": merged_modules_for_inference,
         "round4_checkpoint_initialization_path": round4_checkpoint_path,
+        "strict_repro": {
+            "input_mode": input_mode,
+            "model_arch": model_arch,
+            "open_set_model_selection": (
+                "known_validation_only_no_unknown_out"
+                if strict_validation_selection
+                else "legacy_validation_uses_unknown_out"
+            ),
+        },
         "training_skipped": skip_training,
         "status": "completed",
         "completion_status": "completed",
@@ -1408,6 +1447,9 @@ def main() -> int:
         parser.add_argument("--diagnostic-output-dir", default=None)
         parser.add_argument("--frozen-pair-manifest", default=None)
         parser.add_argument("--startup-dry-run", action="store_true")
+        parser.add_argument("--input-mode", choices=["vector", "pdg_image"], default="vector")
+        parser.add_argument("--strict-open-set-selection", action="store_true")
+        parser.add_argument("--model-arch", choices=sorted(MODEL_ARCHITECTURES), default="mlp")
         args = parser.parse_args()
         startup_dry_run = bool(args.startup_dry_run)
 
@@ -1554,6 +1596,9 @@ def main() -> int:
                 "training_started": False,
                 "evaluation_started": False,
                 "metrics_written": False,
+                "input_mode": args.input_mode,
+                "strict_open_set_selection": bool(args.strict_open_set_selection),
+                "model_arch": args.model_arch,
                 "round4": round4_settings.to_dict(),
                 "selected_experiments": selected,
                 "protocol_lock": validated_protocol_lock,
@@ -1594,6 +1639,9 @@ def main() -> int:
                     seed_label_value=seed_label_value,
                     timestamp=timestamp,
                     dataset_family_root=dataset_family_root,
+                    input_mode=args.input_mode,
+                    strict_validation_selection=bool(args.strict_open_set_selection),
+                    model_arch=args.model_arch,
                 )
             )
 
@@ -1606,6 +1654,9 @@ def main() -> int:
             "round4_config_path": str(round4_config_path.resolve()) if round4_config_path else None,
             "config": settings.to_dict(),
             "round4": round4_settings.to_dict(),
+            "input_mode": args.input_mode,
+            "strict_open_set_selection": bool(args.strict_open_set_selection),
+            "model_arch": args.model_arch,
             "output_dir": str(output_dir),
             "git_commit": _git_commit(workspace),
             "log_path": str(output_dir),
